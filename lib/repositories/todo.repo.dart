@@ -46,7 +46,7 @@ class TodoRepo extends Repo<TodoModel> {
   }
 
   @override
-  bool add(TodoModel model) {
+  int? add(TodoModel model) {
     return _db.add(model);
   }
 

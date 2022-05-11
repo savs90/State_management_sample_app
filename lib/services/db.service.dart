@@ -30,10 +30,10 @@ class Database {
     return [];
   }
 
-  bool add(Model model) {
-    if (model is UserModel) _users.add(UserModel(idCounter++, model.username, model.password));
-    if (model is TodoModel) _todos.add(TodoModel(idCounter++, model.name, model.done, model.timestamp, model.userId));
-    return true;
+  int? add(Model model) {
+    if (model is UserModel) _users.add(UserModel(idCounter, model.username, model.password));
+    if (model is TodoModel) _todos.add(TodoModel(idCounter, model.name, model.done, model.timestamp, model.userId));
+    return idCounter++;
   }
 
   bool update(Model model) {

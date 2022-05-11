@@ -3,6 +3,6 @@ abstract class Repo<T> {
 
   T? getById(int id);
   List<T> getAll();
-  bool add(T model);
+  int? add(T model);
   bool remove(int id);
 }

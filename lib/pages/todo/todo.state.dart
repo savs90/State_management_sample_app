@@ -11,7 +11,9 @@ class TodoPageStateProvider extends BaseState<TodoPageState> {
     }
     int newTimestamp = DateTime.now().millisecondsSinceEpoch;
     TodoModel newTodo = TodoModel(todo.id, todo.name, todo.done, newTimestamp, todo.userId);
-    if (TodoRepoProvider.instance.state.add(newTodo) == true) {
+    int? result = TodoRepoProvider.instance.state.add(newTodo);
+    if (result != null) {
+      newTodo = TodoModel(result, todo.name, todo.done, newTimestamp, todo.userId);
       state = TodoPageState(todos: [...state.todos, newTodo]);
     }
   }

@@ -40,7 +40,7 @@ class UserRepo extends Repo<UserModel> {
   }
 
   @override
-  bool add(UserModel model) {
+  int? add(UserModel model) {
     return _db.add(model);
   }
 
