@@ -2,7 +2,7 @@ import '../../models/todo.model.dart';
 import '../../basestate/basestate.logic.dart';
 
 class TodoProfilePageStateProvider extends BaseState<TodoProfilePageState> {
-  TodoProfilePageStateProvider(TodoProfilePageState init) : super(init);
+  TodoProfilePageStateProvider(TodoProfilePageState init) : super(init, true);
 
   void updateTask(String newTask) {
     final _cState = state.todo;

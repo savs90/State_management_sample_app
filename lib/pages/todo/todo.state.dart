@@ -3,7 +3,7 @@ import '../../repositories/todo.repo.dart';
 import '../../basestate/basestate.logic.dart';
 
 class TodoPageStateProvider extends BaseState<TodoPageState> {
-  TodoPageStateProvider(TodoPageState init) : super(init);
+  TodoPageStateProvider(TodoPageState init) : super(init, true);
 
   void add(TodoModel? todo) {
     if (todo == null) {

@@ -1,7 +1,7 @@
 import '../../basestate/basestate.logic.dart';
 
 class LoginPageStateProvider extends BaseState<LoginPageState> {
-  LoginPageStateProvider(LoginPageState init) : super(init);
+  LoginPageStateProvider(LoginPageState init) : super(init, true);
 
   void updateUsername(String username) {
     state = LoginPageState(username: username, password: state.password);

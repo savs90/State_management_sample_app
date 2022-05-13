@@ -4,10 +4,15 @@ class BaseState<T> {
   late T _state;
   late StreamController<T> _streamController;
 
-  BaseState(T initState) {
+  BaseState(T initState, [bool autoDispose = false]) {
     _streamController = StreamController<T>.broadcast();
     addToSink(initState);
     init();
+    _streamController.onCancel = () {
+      if (autoDispose == true) {
+        close();
+      }
+    };
   }
 
   T get state => _state;
